@@ -16,8 +16,9 @@ if not typescript_setup then
 	return
 end
 
-local keymap = vim.keymap -- for conciseness
-
+local keymap = vim.keymap -- for conciseness 
+local util = require "lspconfig/util"
+local path = util.path
 -- enable keybinds only for when lsp server available
 local on_attach = function(client, bufnr)
 	-- keybind options
@@ -92,10 +93,29 @@ lspconfig["marksman"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 })
--- configure html server
-lspconfig["jedi_language_server"].setup({
+-- configure python server
+
+local function get_python_path(workspace)
+    -- Use activated virtualenv.
+    if vim.env.VIRTUAL_ENV then
+        return path.join(vim.env.VIRTUAL_ENV, "bin", "python")
+    end
+
+    -- Find and use virtualenv via poetry in workspace directory.
+    local match = vim.fn.glob(path.join(workspace, "poetry.lock"))
+    if match ~= "" then
+        local venv = vim.fn.trim(vim.fn.system "poetry env info -p")
+        return path.join(venv, "bin", "python")
+    end
+
+    -- Fallback to system Python.
+    return vim.fn.exepath "python3" or vim.fn.exepath "python" or "python"
+end
+
+lspconfig["pyright"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
+  filetypes = {"python"}
 })
 -- configure css server
 lspconfig["cssls"].setup({

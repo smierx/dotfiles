@@ -1,3 +1,5 @@
+--vim.g.python3_host_prog = "/opt/homebrew/Cellar/python@3.11/3.11.4_1/bin/python3.11"
+
 require("smierx.plugins-setup")
 require("smierx.core.options")
 require("smierx.core.keymaps")

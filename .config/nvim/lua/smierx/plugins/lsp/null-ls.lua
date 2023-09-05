@@ -17,22 +17,17 @@ null_ls.setup({
 	sources = {
 		--  to disable file types use
 		--  "formatting.prettier.with({disabled_filetypes = {}})" (see null-ls docs)
-		formatting.prettier, -- js/ts formatter
-		formatting.stylua, -- lua formatter
-		diagnostics.eslint_d.with({ -- js/ts linter
-			-- only enable eslint if root has .eslintrc.js (not in youtube nvim video)
-			condition = function(utils)
-				return utils.root_has_file(".eslintrc.js") -- change file extension if you use something else
-			end,
-		}),
+		null_ls.builtins.formatting.prettier, -- js/ts formatter
 		null_ls.builtins.diagnostics.pylint.with({
 			diagnostics_postprocess = function(diagnostic)
 				diagnostic.code = diagnostic.message_id
 			end,
+      args = {"--rc-file","$HOME/.pylintrc","--from-stdin", "$FILENAME", "-f", "json"}
 		}),
-		null_ls.builtins.formatting.isort,
-		null_ls.builtins.formatting.black,
+		--null_ls.builtins.formatting.isort,
+		--null_ls.builtins.formatting.black,
 	},
+	debug = true,
 	-- configure format on save
 	on_attach = function(current_client, bufnr)
 		if current_client.supports_method("textDocument/formatting") then

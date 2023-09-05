@@ -33,7 +33,7 @@ mason_lspconfig.setup({
 		"jsonls",
 		"lua_ls",
 		"marksman",
-		"jedi_language_server",
+		"pyright",
 	},
 	-- auto-install configured servers (with lspconfig)
 	automatic_installation = true, -- not the same as ensure_installed
