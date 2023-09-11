@@ -52,7 +52,7 @@ return packer.startup(function(use)
 	-- fuzzy finding w/ telescope
 	use("nvim-lua/plenary.nvim")
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
-	use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder
+  use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder
   
 	-- autocompletion
 	use("hrsh7th/nvim-cmp") -- completion plugin
@@ -79,7 +79,7 @@ return packer.startup(function(use)
 			{ "nvim-treesitter/nvim-treesitter" },
 		},
 	}) -- enhanced lsp uis
-	use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
+	--use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
 	use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
 
 	-- formatting & linting
@@ -101,12 +101,7 @@ return packer.startup(function(use)
 	-- git integration
 	use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
 
-	--use("mfussenegger/nvim-dap")
-	--use("mfussenegger/nvim-dap-python")
-  --use("neovim/python-client")
-	--use("Shougo/deoplete.nvim")
-	--use("deoplete-plugins/deoplete-jedi")
-	--use("petobens/poet-v") -- poetry python
+	
 	if packer_bootstrap then
 		require("packer").sync()
 	end
