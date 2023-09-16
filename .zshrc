@@ -80,10 +80,10 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting web-search)
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # path+=('~/Projekte/smierx/data/aliases')
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-. ~/Projekte/smierx/data/aliases/base
-. ~/Projekte/smierx/data/aliases/anki
-
+if [ ! -f ~/Projekte/smierx/ ]; then
+  . ~/Projekte/smierx/data/aliases/base
+  . ~/Projekte/smierx/data/aliases/anki
+fi
 # Created by `pipx` on 2023-08-22 14:12:01
 export PATH="$PATH:$HOME/.local/bin"
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
