@@ -104,7 +104,8 @@ return packer.startup(function(use)
 	use(
     "folke/todo-comments.nvim"
   )
-	if packer_bootstrap then
+  use("ThePrimeagen/harpoon")
+  if packer_bootstrap then
 		require("packer").sync()
 	end
 end)

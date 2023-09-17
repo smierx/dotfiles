@@ -1,4 +1,4 @@
---vim.g.python3_host_prog = "/opt/homebrew/Cellar/python@3.11/3.11.4_1/bin/python3.11"
+  --vim.g.python3_host_prog = "/opt/homebrew/Cellar/python@3.11/3.11.4_1/bin/python3.11"
 
 require("smierx.plugins-setup")
 require("smierx.core.options")
@@ -17,3 +17,4 @@ require("smierx.plugins.autopairs")
 require("smierx.plugins.treesitter")
 require("smierx.plugins.gitsigns")
 require("smierx.plugins.todo-comments")
+require("smierx.plugins.harpoon")
