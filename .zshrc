@@ -84,6 +84,11 @@ if [[ -r "$HOME/Projekte/smierx/" ]]; then
   . ~/Projekte/smierx/data/aliases/base
   . ~/Projekte/smierx/data/aliases/anki
 fi
+
+if [[ -r "$HOME/smierx/" ]]; then
+  . ~/smierx/data/aliases/base
+  . ~/smierx/data/aliases/anki
+fi
 # Created by `pipx` on 2023-08-22 14:12:01
 export PATH="$PATH:$HOME/.local/bin"
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
