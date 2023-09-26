@@ -82,12 +82,18 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting web-search)
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 if [[ -r "$HOME/Projekte/smierx/" ]]; then
   . ~/Projekte/smierx/data/aliases/base
-  . ~/Projekte/smierx/data/aliases/anki
+fi
+
+if [[ -r "$HOME/Projekte/language_anki/" ]]; then
+  . ~/Projekte/language_anki/aliases
+fi
+
+if [[ -r "$HOME/language_anki/" ]]; then
+  . ~/language_anki/aliases
 fi
 
 if [[ -r "$HOME/smierx/" ]]; then
   . ~/smierx/data/aliases/base
-  . ~/smierx/data/aliases/anki
 fi
 # Created by `pipx` on 2023-08-22 14:12:01
 export PATH="$PATH:$HOME/.local/bin"
