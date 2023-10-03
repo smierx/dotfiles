@@ -6,6 +6,7 @@ return {
 
 
 
-	'folke/todo-comments.nvim',
-  'ThePrimeagen/harpoon',
+    'folke/todo-comments.nvim',
+    'ThePrimeagen/harpoon',
+    'simrat39/rust-tools.nvim'
 }
