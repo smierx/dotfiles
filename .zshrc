@@ -1,3 +1,4 @@
+###General
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -94,6 +95,14 @@ fi
 
 if [[ -r "$HOME/smierx/" ]]; then
   . ~/smierx/data/aliases/base
+fi
+
+if [[ -r "$HOME/taskwarrior_extends/" ]]; then
+  . ~/taskwarrior_extends/taskwarrior_aliases
+fi
+
+if [[ -r "$HOME/xdays/" ]]; then
+  . ~/xdays/work_day
 fi
 # Created by `pipx` on 2023-08-22 14:12:01
 export PATH="$PATH:$HOME/.local/bin"

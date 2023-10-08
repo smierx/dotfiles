@@ -1,4 +1,5 @@
-# [Created by task 2.6.2 9/25/2023 20:38:53]
+###General
+#[Created by task 2.6.2 9/25/2023 20:38:53]
 # Taskwarrior program configuration file.
 # For more documentation, see https://taskwarrior.org or try 'man task', 'man task-color',
 # 'man task-sync' or 'man taskrc'
@@ -15,7 +16,7 @@
 # Use the command 'task show' to see all defaults and overrides
 
 # Files
-data.location=/Users/mdudas/.task
+data.location=~/.task
 
 # To use the default location of the XDG directories,
 # move this configuration file from ~/.taskrc to ~/.config/task/taskrc and uncomment below
@@ -27,7 +28,7 @@ data.location=/Users/mdudas/.task
 #include light-16.theme
 #include light-256.theme
 #include dark-16.theme
-#include dark-256.theme
+include dark-256.theme
 #include dark-red-256.theme
 #include dark-green-256.theme
 #include dark-blue-256.theme
@@ -35,7 +36,7 @@ data.location=/Users/mdudas/.task
 #include dark-yellow-green.theme
 #include dark-gray-256.theme
 #include dark-gray-blue-256.theme
-include solarized-dark-256.theme
+#include solarized-dark-256.theme
 #include solarized-light-256.theme
 #include no-color.theme
 
@@ -45,3 +46,34 @@ news.version=2.6.0
 urgency.user.tag.problem.coefficient=4.5
 urgency.user.tag.later.coefficient=-6.0
 urgency.blocked.coefficient=0.0
+
+###report
+report.study.description=study report
+report.study.columns=id,project,description.count,due
+report.study.labels=ID,Subj,Desc,Due
+report.study.sort=project+\/,due+
+report.study.filter=status:pending project:Study -Feierabend
+##
+report.proj.description=Projects report
+report.proj.columns=id,project,description.count,due
+report.proj.labels=ID,Proj,Desc,Due
+report.proj.sort=project+\/,due+
+report.proj.filter=status:pending project:Projects -Feierabend
+##
+report.work.description=Work report
+report.work.columns=id,description.count,due
+report.work.labels=ID,Desc,Due
+report.work.sort=project+\/,due+
+report.work.filter=status:pending project:Work -Feierabend
+##
+report.feierabend.description=Feierabend report
+report.feierabend.columns=id,project,description.count
+report.feierabend.labels=ID,Project,Desc
+report.feierabend.sort=project+\/,due+
+report.feierabend.filter=status:pending +Feierabend
+##
+report.wrong.description=Missing Report
+report.wrong.columns=id,project,description.count,scheduled,due
+report.wrong.labels=ID,Proj,Desc,Sched,Due
+report.wrong.sort=project+\/,due+
+report.wrong.filter=status:pending (due.none: or due.before:eod) or status:pending scheduled.none: or status:pending project.none:
