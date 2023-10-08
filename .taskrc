@@ -71,3 +71,9 @@ report.feierabend.columns=id,project,description.count
 report.feierabend.labels=ID,Project,Desc
 report.feierabend.sort=project+\/,due+
 report.feierabend.filter=status:pending +Feierabend
+##
+report.wrong.description=Missing Report
+report.wrong.columns=id,project,description.count,scheduled,due
+report.wrong.labels=ID,Proj,Desc,Sched,Due
+report.wrong.sort=project+\/,due+
+report.wrong.filter=status:pending (due.none: or due.before:eod) or status:pending scheduled.none: or status:pending project.none:

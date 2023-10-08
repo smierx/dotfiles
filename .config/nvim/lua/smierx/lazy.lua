@@ -13,7 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 
 
 
-require("lazy").setup({{import = "smierx.plugins"}, {import = "smierx.plugins.lsp"}}, {
+require("lazy").setup({{import = "smierx.plugins"}, {import = "smierx.plugins.lsp"}, {import = "smierx.plugins.dap"}}, {
   install = {
     colorscheme = { "nightfly" },
   },
