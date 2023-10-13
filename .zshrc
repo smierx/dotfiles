@@ -101,6 +101,10 @@ if [[ -r "$HOME/taskwarrior_extends/" ]]; then
   . ~/taskwarrior_extends/taskwarrior_aliases
 fi
 
+if [[ -r "$HOME/Projekte/taskwarrior_extends/" ]]; then
+  . ~/Projekte/taskwarrior_extends/taskwarrior_aliases
+fi
+
 if [[ -r "$HOME/xdays/" ]]; then
   . ~/xdays/work_day
 fi
