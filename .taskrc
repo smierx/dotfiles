@@ -28,7 +28,7 @@ data.location=~/.task
 #include light-16.theme
 #include light-256.theme
 #include dark-16.theme
-include dark-256.theme
+#include dark-256.theme
 #include dark-red-256.theme
 #include dark-green-256.theme
 #include dark-blue-256.theme
@@ -36,7 +36,7 @@ include dark-256.theme
 #include dark-yellow-green.theme
 #include dark-gray-256.theme
 #include dark-gray-blue-256.theme
-#include solarized-dark-256.theme
+include solarized-dark-256.theme
 #include solarized-light-256.theme
 #include no-color.theme
 
@@ -46,6 +46,10 @@ news.version=2.6.0
 urgency.user.tag.problem.coefficient=4.5
 urgency.user.tag.later.coefficient=-6.0
 urgency.blocked.coefficient=0.0
+
+
+
+
 
 ###report
 report.study.description=study report
