@@ -106,8 +106,17 @@ if [[ -r "$HOME/Projekte/taskwarrior_extends/" ]]; then
 fi
 
 if [[ -r "$HOME/xdays/" ]]; then
-  . ~/xdays/work_day
+  . ~/xdays/work
+  . ~/xdays/study
+  . ~/xdays/language
 fi
+
+if [[ -r "$HOME/Projekte/xdays/" ]]; then
+  . ~/Projekte/xdays/work
+  . ~/Projekte/xdays/study
+  . ~/Projekte/xdays/language
+fi
+
 # Created by `pipx` on 2023-08-22 14:12:01
 export PATH="$PATH:$HOME/.local/bin"
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
