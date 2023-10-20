@@ -1,0 +1,44 @@
+gl_token=glpat-AeCwxPzwXGzz23dhKgiE
+
+cc_gl() {
+  if [ "$#" -eq 0 ]; then
+    response=$(curl -s --header "PRIVATE-TOKEN: $gl_token" "https://gitlab.smierx.com/api/v4/projects/21/repository/tree?path=/" | jq '.')
+    echo "$response" | jq '.[].name'
+  elif [ "$#" -eq 1 ]; then
+    cookiecutter https://gitlab.smierx.com/privat/templates.git --directory="$1"
+  fi
+}
+
+c_pylint(){
+  erg=$(pylint --rcfile $HOME/.pylintrc -f json $1)
+  python3 $HOME/.scripts/print_pylint.py $erg
+  # Hier muss ich erg in 0010_pylint.py schieben
+}
+
+alias xpylint="pylint --rcfile ~/.pylintrc -f json"
+alias cpylint="c_pylint "
+
+# basic
+alias _hello='echo "hello world"'
+alias _reload='source ~/.zshrc'
+# alias _show='~/Projekte/smierx/venv/bin/python ~/Projekte/smierx/scripts/0001_show_aliases.py'
+
+
+c_uvicorn(){
+  poetry run uvicorn app.main:app --host 0.0.0.0 --reload
+}
+alias cuvicorn="c_uvicorn "
+# server
+alias _server='ssh smierx@192.168.178.87'
+
+# macos
+m_depth(){
+  rpath=$(pwd);
+  cd ~/Projekte/smierx/;
+  poetry run python scripts/0008_macos_folder_depth.py;
+  cd $rpath;
+}
+alias _depth="m_depth "
+
+# cookiecutter
+alias ccgl='cc_gl'
