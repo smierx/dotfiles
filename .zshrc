@@ -64,6 +64,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
+. ~/.zshrc_aliases
 # User configuration
 # export MANPATH="/usr/local/man:$MANPATH"
 # You may need to manually set your language environment
@@ -81,9 +82,6 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting web-search)
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # path+=('~/Projekte/smierx/data/aliases')
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-if [[ -r "$HOME/Projekte/smierx/" ]]; then
-  . ~/Projekte/smierx/data/aliases/base
-fi
 
 if [[ -r "$HOME/Projekte/language_anki/" ]]; then
   . ~/Projekte/language_anki/aliases
@@ -91,10 +89,6 @@ fi
 
 if [[ -r "$HOME/language_anki/" ]]; then
   . ~/language_anki/aliases
-fi
-
-if [[ -r "$HOME/smierx/" ]]; then
-  . ~/smierx/data/aliases/base
 fi
 
 if [[ -r "$HOME/taskwarrior_extends/" ]]; then
