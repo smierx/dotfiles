@@ -92,11 +92,13 @@ if [[ -r "$HOME/language_anki/" ]]; then
 fi
 
 if [[ -r "$HOME/taskwarrior_extends/" ]]; then
-  . ~/taskwarrior_extends/taskwarrior_aliases
+  . ~/taskwarrior_extends/taskwarrior_add
+  . ~/taskwarrior_extends/taskwarrior_modify
 fi
 
 if [[ -r "$HOME/Projekte/taskwarrior_extends/" ]]; then
-  . ~/Projekte/taskwarrior_extends/taskwarrior_aliases
+  . ~/Projekte/taskwarrior_extends/taskwarrior_add
+  . ~/Projekte/taskwarrior_extends/taskwarrior_modify
 fi
 
 if [[ -r "$HOME/xdays/" ]]; then
