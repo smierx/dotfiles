@@ -6,7 +6,7 @@
         "language": [
           "python"
         ],
-        "path": "./python/general.json"
+        "path": "./python/base.json"
       },
       {
         "language": [
