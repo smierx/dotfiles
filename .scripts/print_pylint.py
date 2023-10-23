@@ -32,4 +32,5 @@ if __name__=="__main__":
                 entry["message-id"],
                 entry["message"]
             )
+        table.expand = True
         console.print(table)
