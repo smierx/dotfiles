@@ -52,7 +52,7 @@ keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available 
 keymap.set("n", "<leader>a", "<cmd>AerialToggle!<CR>")
 
 -- luasnip
-local ls = require("luasnip")
+local ls = require("LuaSnip")
 keymap.set("i", "<C-K>", function()
 	ls.expand()
 end, { silent = true })
