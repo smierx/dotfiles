@@ -47,34 +47,3 @@ keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>") -- find string in 
 keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>") -- find string under cursor in current working directory
 keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>") -- list open buffers in current neovim instance
 keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available help tags
-
--- aerial
-keymap.set("n", "<leader>a", "<cmd>AerialToggle!<CR>")
-
--- luasnip
-local ls = require("LuaSnip")
-keymap.set("i", "<C-K>", function()
-	ls.expand()
-end, { silent = true })
-keymap.set("i", "<C-L>", function()
-	ls.jump(1)
-end, { silent = true })
-keymap.set("i", "<C-J>", function()
-	ls.jump(-1)
-end, { silent = true })
-
-keymap.set({ "i", "s" }, "<C-E>", function()
-	if ls.choice_active() then
-		ls.change_choice(1)
-	end
-end, { silent = true })
-
-vim.cmd([[
-" Use Tab to expand and jump through snippets
-imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>'
-smap <silent><expr> <Tab> luasnip#jumpable(1) ? '<Plug>luasnip-jump-next' : '<Tab>'
-
-" Use Shift-Tab to jump backwards through snippets
-imap <silent><expr> <S-Tab> luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '<S-Tab>'
-smap <silent><expr> <S-Tab> luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '<S-Tab>'
-]])
