@@ -83,36 +83,6 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting web-search)
 # path+=('~/Projekte/smierx/data/aliases')
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-if [[ -r "$HOME/Projekte/language_anki/" ]]; then
-  . ~/Projekte/language_anki/aliases
-fi
-
-if [[ -r "$HOME/language_anki/" ]]; then
-  . ~/language_anki/aliases
-fi
-
-if [[ -r "$HOME/taskwarrior_extends/" ]]; then
-  . ~/taskwarrior_extends/taskwarrior_add
-  . ~/taskwarrior_extends/taskwarrior_modify
-fi
-
-if [[ -r "$HOME/Projekte/taskwarrior_extends/" ]]; then
-  . ~/Projekte/taskwarrior_extends/taskwarrior_add
-  . ~/Projekte/taskwarrior_extends/taskwarrior_modify
-fi
-
-if [[ -r "$HOME/xdays/" ]]; then
-  . ~/xdays/work
-  . ~/xdays/study
-  . ~/xdays/language
-fi
-
-if [[ -r "$HOME/Projekte/xdays/" ]]; then
-  . ~/Projekte/xdays/work
-  . ~/Projekte/xdays/study
-  . ~/Projekte/xdays/language
-fi
-
 # Created by `pipx` on 2023-08-22 14:12:01
 export PATH="$PATH:$HOME/.local/bin"
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'

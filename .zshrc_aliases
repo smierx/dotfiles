@@ -1,54 +1,47 @@
 gl_token=glpat-AeCwxPzwXGzz23dhKgiE
 
-cc_gl() {
-  if [ "$#" -eq 0 ]; then
-    response=$(curl -s --header "PRIVATE-TOKEN: $gl_token" "https://gitlab.smierx.com/api/v4/projects/21/repository/tree?path=/" | jq '.')
-    echo "$response" | jq '.[].name'
-  elif [ "$#" -eq 1 ]; then
-    cookiecutter https://gitlab.smierx.com/privat/templates.git --directory="$1"
-  fi
-}
+# Taskwarrior
+# Leader: t
+if [[ -r "$HOME/taskwarrior_extends/" ]]; then
+  . ~/taskwarrior_extends/taskwarrior_add
+  . ~/taskwarrior_extends/taskwarrior_modify
+fi
 
-c_pylint(){
-  erg=$(pylint --rcfile $HOME/.pylintrc -f json $1)
-  python3 $HOME/.scripts/print_pylint.py $erg
-}
+if [[ -r "$HOME/Projekte/taskwarrior_extends/" ]]; then
+  . ~/Projekte/taskwarrior_extends/taskwarrior_add
+  . ~/Projekte/taskwarrior_extends/taskwarrior_modify
+fi
 
-black_isort_flake() {
-  if [ "$#" -eq 1 ]; then
-    black $1
-    isort $1
-    flake8 $1
-  fi
-}
+# Xdays
+# Leader: x
+if [[ -r "$HOME/xdays/" ]]; then
+  . ~/xdays/work
+  . ~/xdays/study
+  . ~/xdays/language
+fi
 
+if [[ -r "$HOME/Projekte/xdays/" ]]; then
+  . ~/Projekte/xdays/work
+  . ~/Projekte/xdays/study
+  . ~/Projekte/xdays/language
+fi
 
-alias xpylint="pylint --rcfile ~/.pylintrc -f json"
-alias plint="c_pylint "
-alias blifl="black_isort_flake "
-
+# Workflow
+# Leader: w
+if [[ -r "$HOME/.scripts/workflow" ]]; then
+  . ~/.scripts/workflow
+fi
 
 # basic
-alias _hello='echo "hello world"'
-alias _reload='source ~/.zshrc'
-# alias _show='~/Projekte/smierx/venv/bin/python ~/Projekte/smierx/scripts/0001_show_aliases.py'
-
-
-c_uvicorn(){
-  poetry run uvicorn app.main:app --host 0.0.0.0 --reload
-}
-alias cuvicorn="c_uvicorn "
-# server
-alias _server='ssh smierx@192.168.178.87'
-
-# macos
+# Leader: _
 m_depth(){
   rpath=$(pwd);
   cd ~/Projekte/smierx/;
   poetry run python scripts/0008_macos_folder_depth.py;
   cd $rpath;
 }
-alias _depth="m_depth "
 
-# cookiecutter
-alias ccgl='cc_gl'
+alias _hello='echo "hello world"'
+alias _reload='source ~/.zshrc'
+alias _server='ssh smierx@192.168.178.87'
+alias _depth="m_depth "
