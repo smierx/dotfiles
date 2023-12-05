@@ -1,0 +1,40 @@
+# Workflow
+# Leader: w
+
+cc_gl() {
+  if [ "$#" -eq 0 ]; then
+    response=$(curl -s --header "PRIVATE-TOKEN: $gl_token" "https://gitlab.smierx.com/api/v4/projects/21/repository/tree?path=/" | jq '.')
+    echo "$response" | jq '.[].name'
+  elif [ "$#" -eq 1 ]; then
+    cookiecutter https://gitlab.smierx.com/privat/templates.git --directory="$1"
+  fi
+}
+
+c_pylint(){
+  erg=$(pylint --rcfile $HOME/.pylintrc -f json $1)
+  python3 $HOME/.scripts/print_pylint.py $erg
+}
+
+black_isort_flake() {
+  if [ "$#" -eq 1 ]; then
+    black $1
+    isort $1
+    flake8 $1
+  fi
+}
+
+c_test() {
+  if [ "$#" -eq 1 ]; then
+    poetry run pytest --cov-report term-missing:skip-covered --cov=$1 tests/
+  fi
+}
+
+c_uvicorn(){
+  poetry run uvicorn app.main:app --host 0.0.0.0 --reload
+}
+
+alias wplint="c_pylint "
+alias wblack="black_isort_flake "
+alias wtest="c_test "
+alias wuvicorn="c_uvicorn "
+alias wccgl='cc_gl'
