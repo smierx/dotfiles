@@ -15,6 +15,7 @@ export PATH="$HOME/.local/bin:$PATH"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="powerlevel10k/powerlevel10k"
+(cat ~/.cache/wal/sequences &)
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -86,3 +87,4 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting web-search)
 # Created by `pipx` on 2023-08-22 14:12:01
 export PATH="$PATH:$HOME/.local/bin"
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
