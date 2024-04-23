@@ -4,5 +4,4 @@ return {
 	"inkarkat/vim-ReplaceWithRegister", -- replace with register contents using motion (gr + motion)
 
 	"ThePrimeagen/harpoon",
-	"simrat39/rust-tools.nvim",
 }
