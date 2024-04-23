@@ -1,0 +1,15 @@
+# Leader: _
+
+m_depth(){
+  rpath=$(pwd);
+  cd ~/Projekte/smierx/;
+  poetry run python scripts/0008_macos_folder_depth.py;
+  cd $rpath;
+}
+
+alias _hello='echo "hello world"'
+alias _reload='source ~/.zshrc'
+alias _server='ssh smierx@192.168.178.87'
+alias _depth="m_depth "
+
+alias _chypr="cat ~/.config/hypr/hyprland.conf"

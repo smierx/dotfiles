@@ -1,0 +1,14 @@
+# Leader: z
+
+z_create_parent() {
+  cd ~/zettelkasten_support/;
+  ./venv/bin/python main.py create --template $1 --name $2 --parent $3
+}
+
+z_create() {
+  cd ~/zettelkasten_support/;
+  ./venv/bin/python main.py create --template $1 --name $2
+}
+
+alias zc="z_create "
+alias zcp="z_create_parent "
