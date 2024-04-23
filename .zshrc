@@ -65,7 +65,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
-. ~/smierx/alias/main
+. ~/.alias/main
 # User configuration
 # export MANPATH="/usr/local/man:$MANPATH"
 # You may need to manually set your language environment
