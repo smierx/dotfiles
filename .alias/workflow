@@ -33,7 +33,12 @@ c_test() {
 c_uvicorn(){
   poetry run uvicorn app.main:app --host 0.0.0.0 --reload
 }
-
+c_hid() {
+  cd ~/custom_workflow_dashboards/
+  source venv/bin/activate
+  sudo python main.py
+}
+alias chid="c_hid "
 alias wplint="c_pylint "
 alias wblack="black_isort_flake "
 alias wtest="c_test "

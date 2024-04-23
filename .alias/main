@@ -1,18 +1,18 @@
-if [[ -r "$HOME/smierx/alias/general" ]]; then
-  . ~/smierx/alias/general
+if [[ -r "$HOME/.alias/general" ]]; then
+  . ~/.alias/general
 fi
-if [[ -r "$HOME/smierx/alias/smierx" ]]; then
-  . ~/smierx/alias/smierx
+if [[ -r "$HOME/.alias/smierx" ]]; then
+  . ~/.alias/smierx
 fi
-if [[ -r "$HOME/smierx/alias/workflow" ]]; then
-  . ~/smierx/alias/workflow
+if [[ -r "$HOME/.alias/workflow" ]]; then
+  . ~/.alias/workflow
 fi
-if [[ -r "$HOME/smierx/alias/git" ]]; then
-  . ~/smierx/alias/git
+if [[ -r "$HOME/.alias/git" ]]; then
+  . ~/.alias/git
 fi
-if [[ -r "$HOME/smierx/alias/zettelkasten" ]]; then
-  . ~/smierx/alias/zettelkasten
+if [[ -r "$HOME/.alias/zettelkasten" ]]; then
+  . ~/.alias/zettelkasten
 fi
-if [[ -r "$HOME/smierx/alias/docker" ]]; then
-  . ~/smierx/alias/docker
+if [[ -r "$HOME/.alias/docker" ]]; then
+  . ~/.alias/docker
 fi
