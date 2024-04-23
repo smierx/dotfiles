@@ -1,0 +1,75 @@
+14/03/24 (08:58:54) | ERROR: <urlopen error [Errno -3] Temporary failure in name resolution>
+Traceback (most recent call last):
+  File "/usr/lib/python3.11/urllib/request.py", line 1348, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "/usr/lib/python3.11/http/client.py", line 1298, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/usr/lib/python3.11/http/client.py", line 1344, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.11/http/client.py", line 1293, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.11/http/client.py", line 1052, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.11/http/client.py", line 990, in send
+    self.connect()
+  File "/usr/lib/python3.11/http/client.py", line 1463, in connect
+    super().connect()
+  File "/usr/lib/python3.11/http/client.py", line 956, in connect
+    self.sock = self._create_connection(
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/socket.py", line 827, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/socket.py", line 962, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/smierx/.local/share/pipx/venvs/bpytop/lib/python3.11/site-packages/bpytop.py", line 5029, in _checker
+    with urllib.request.urlopen("https://github.com/aristocratos/bpytop/raw/master/bpytop.py", timeout=5) as source: # type: ignore
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/urllib/request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/urllib/request.py", line 519, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/urllib/request.py", line 536, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/urllib/request.py", line 496, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/usr/lib/python3.11/urllib/request.py", line 1391, in https_open
+    return self.do_open(http.client.HTTPSConnection, req,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/urllib/request.py", line 1351, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno -3] Temporary failure in name resolution>
+14/03/24 (09:01:22) | INFO: New instance of bpytop version 1.0.68 started with pid 106756
+14/03/24 (09:01:22) | INFO: Loglevel set to DEBUG
+14/03/24 (09:01:22) | DEBUG: Using psutil version 5.9.8
+14/03/24 (09:01:22) | DEBUG: CMD: /usr/bin/bpytop
+14/03/24 (09:01:22) | INFO: Config file version and bpytop version mismatch, will be recreated on exit!
+14/03/24 (09:01:22) | DEBUG: new fstab_filter set : ['/', '/boot', '/mnt/storage']
+14/03/24 (09:01:22) | DEBUG: Collect and draw completed in 0.099214 seconds
+14/03/24 (09:01:22) | DEBUG: Init completed in 0.129485 seconds
+14/03/24 (09:20:38) | INFO: Exiting. Runtime 0:19:16 
+
+14/03/24 (10:22:27) | INFO: New instance of bpytop version 1.0.68 started with pid 2290
+14/03/24 (10:22:27) | INFO: Loglevel set to DEBUG
+14/03/24 (10:22:27) | DEBUG: Using psutil version 5.9.8
+14/03/24 (10:22:27) | DEBUG: CMD: /usr/bin/bpytop
+14/03/24 (10:22:27) | DEBUG: new fstab_filter set : ['/', '/boot']
+14/03/24 (10:22:27) | DEBUG: Collect and draw completed in 0.109809 seconds
+14/03/24 (10:22:27) | DEBUG: Init completed in 0.127353 seconds
+15/03/24 (06:13:34) | INFO: New instance of bpytop version 1.0.68 started with pid 5503
+15/03/24 (06:13:34) | INFO: Loglevel set to DEBUG
+15/03/24 (06:13:34) | DEBUG: Using psutil version 5.9.8
+15/03/24 (06:13:34) | DEBUG: CMD: /usr/bin/bpytop
+15/03/24 (06:13:34) | DEBUG: new fstab_filter set : ['/', '/boot']
+15/03/24 (06:13:34) | DEBUG: Collect and draw completed in 0.107569 seconds
+15/03/24 (06:13:34) | DEBUG: Init completed in 0.124629 seconds
