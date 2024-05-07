@@ -44,3 +44,4 @@ alias wblack="black_isort_flake "
 alias wtest="c_test "
 alias wuvicorn="c_uvicorn "
 alias wccgl='cc_gl'
+alias wbrain='nvim ~/Nextcloud/Brain/'

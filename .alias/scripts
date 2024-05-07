@@ -1,18 +1,18 @@
 # Leader: s
 s_alias() {
-  python3 ~/smierx/scripts/alias.py
+  python3 ~/.scripts/alias.py
 }
 
 s_alias_get() {
-  python3 ~/smierx/scripts/alias_get.py $1
+  python3 ~/.scripts/alias_get.py $1
 }
 
 s_alias_list() {
-  python3 ~/smierx/scripts/alias_list_leader.py
+  python3 ~/.scripts/alias_list_leader.py
 }
 
 s_alias_check() {
-  python3 ~/smierx/scripts/alias_check_format.py
+  python3 ~/.scripts/alias_check_format.py
 }
 
 alias sa="s_alias"

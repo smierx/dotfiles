@@ -47,37 +47,4 @@ urgency.user.tag.problem.coefficient=4.5
 urgency.user.tag.later.coefficient=-6.0
 urgency.blocked.coefficient=0.0
 
-
-
-
-
-###report
-report.study.description=study report
-report.study.columns=id,project,description.count,due
-report.study.labels=ID,Subj,Desc,Due
-report.study.sort=project+\/,due+
-report.study.filter=status:pending project:Study -Feierabend
-##
-report.proj.description=Projects report
-report.proj.columns=id,project,description.count,due
-report.proj.labels=ID,Proj,Desc,Due
-report.proj.sort=project+\/,due+
-report.proj.filter=status:pending project:Projects -Feierabend
-##
-report.work.description=Work report
-report.work.columns=id,description.count,due
-report.work.labels=ID,Desc,Due
-report.work.sort=project+\/,due+
-report.work.filter=status:pending project:Work -Feierabend
-##
-report.feierabend.description=Feierabend report
-report.feierabend.columns=id,project,description.count
-report.feierabend.labels=ID,Project,Desc
-report.feierabend.sort=project+\/,due+
-report.feierabend.filter=status:pending +Feierabend
-##
-report.wrong.description=Missing Report
-report.wrong.columns=id,project,description.count,scheduled,due
-report.wrong.labels=ID,Proj,Desc,Sched,Due
-report.wrong.sort=project+\/,due+
-report.wrong.filter=status:pending (due.none: or due.before:eod) or status:pending scheduled.none: or status:pending project.none:
+weekstart=monday
