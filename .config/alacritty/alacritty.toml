@@ -385,7 +385,7 @@ semantic_escape_chars = ",│`|:\"' ()[]{}<>"
 decorations = "Full"
 opacity = 0.95
 [shell]
-program = "/bin/zsh"
+program = "/bin/bash"
 [window.dimensions]
 columns = 110
 lines = 33

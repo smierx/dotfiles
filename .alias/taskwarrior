@@ -1,0 +1,7 @@
+# Leader: t
+
+tt_custom_with_project() {
+  t add project:$1 +$2 ${@:3}
+}
+
+alias ta="tt_custom_with_project "

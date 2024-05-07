@@ -1,0 +1,7 @@
+# Leader: d
+d_rm() {
+  docker rmi "$(docker images -f 'dangling=true' -q)" # entfernt alle unbenannten images
+}
+alias drm="d_rm " # entfernt alle unbenannten images
+alias dpush="docker push smierx/$1" # pusht image ins registry
+alias dbuild="docker buildx build -t smierx/$1 . --file $2 --load"

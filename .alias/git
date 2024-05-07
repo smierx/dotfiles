@@ -1,0 +1,29 @@
+# Leader: g
+
+g_dirty() {
+ ~/smierx/projects/ProjectGitScanner/venv/bin/python ~/smierx/projects/ProjectGitScanner/dirty.py 
+}
+
+alias gdirty="g_dirty "
+
+
+
+
+
+
+
+
+
+
+alias gs="git status"
+alias gc="git checkout"
+alias gb="git branch"
+alias gm="git commit"
+alias gd="git diff"
+alias gl="git log --oneline --graph --all"
+alias glast="git log -1 HEAD"
+alias gca="git commit --amend"
+alias gfa="git fetch --all"
+alias gpa="git pull --all"
+alias grv="git remote -v"
+

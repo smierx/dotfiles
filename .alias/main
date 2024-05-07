@@ -1,0 +1,24 @@
+if [[ -r "$HOME/.alias/general" ]]; then
+  source ~/.alias/general
+fi
+if [[ -r "$HOME/.alias/scripts" ]]; then
+  source ~/.alias/scripts
+fi
+if [[ -r "$HOME/.alias/workflow" ]]; then
+  source ~/.alias/workflow
+fi
+if [[ -r "$HOME/.alias/git" ]]; then
+  source ~/.alias/git
+fi
+if [[ -r "$HOME/.alias/zettelkasten" ]]; then
+  source ~/.alias/zettelkasten
+fi
+if [[ -r "$HOME/.alias/docker" ]]; then
+  source ~/.alias/docker
+fi
+if [[ -r "$HOME/.alias/dstask" ]]; then
+  source ~/.alias/dstask
+fi
+if [[ -r "$HOME/.alias/taskwarrior" ]]; then
+  source ~/.alias/taskwarrior
+fi

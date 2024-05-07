@@ -1,0 +1,21 @@
+# Leader: s
+s_alias() {
+  python3 ~/.scripts/alias.py
+}
+
+s_alias_get() {
+  python3 ~/.scripts/alias_get.py $1
+}
+
+s_alias_list() {
+  python3 ~/.scripts/alias_list_leader.py
+}
+
+s_alias_check() {
+  python3 ~/.scripts/alias_check_format.py
+}
+
+alias sa="s_alias"
+alias sag="s_alias_get "
+alias sal="s_alias_list "
+alias sac="s_alias_check "
