@@ -29,7 +29,7 @@ return {
 			ensure_installed = {
 				"lua_ls",
 				"rust_analyzer",
-				"gopls",
+        "ruff_lsp",
         "pyright"
 			},
 			handlers = {
@@ -55,7 +55,56 @@ return {
 				end,
 			},
 		})
-
+    require("lspconfig").pyright.setup({
+                settings = {
+                    pyright = {
+                        disableOrganizeImports = true, -- Will use ruff instead
+                    },
+                    python = {
+                        analysis = {
+                            autoSearchPaths = true,
+                            autoImportCompletions = true,
+                            diagnosticMode = "openFilesOnly", -- Use "workspace" if you like but may be slow
+                            typeCheckingMode = "basic",   -- Using Mypy instead, it's better
+                            pythonPath = "python",        -- gets replaced below
+                        }
+                    },
+                },
+                before_init = function(_, config)
+                    local penv = require("util").python_env({
+                        patterns = { "venv", ".venv", "env", ".env", ".eddie-venv" }
+                    })
+                    if penv == nil then
+                        return
+                    end
+                    config.settings.python.pythonPath = penv.python
+                end,
+                capabilities = capabilities,
+            })
+    require('lspconfig').ruff_lsp.setup {
+-- Handled by Pyright
+                on_attach = function(client, _)
+                    client.server_capabilities.hoverProvider = false
+                end,
+                commands = {
+                    RuffOrganizeImports = {
+                      function()
+                        vim.lsp.buf.execute_command {
+                          command = 'ruff.applyAutofix',
+                          arguments = { { uri = vim.uri_from_bufnr(0) } },
+                        }
+                      end,
+                      description = 'Ruff: Fix all auto-fixable problems',
+                    },
+                },
+                capabilities = capabilities,
+      init_options = {
+        settings = {
+          -- Any extra CLI arguments for `ruff` go here.
+          args = {"--config=./pyproject.toml"},
+        }
+      }
+    }
 		local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
 		cmp.setup({
