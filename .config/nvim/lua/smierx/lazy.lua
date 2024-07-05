@@ -12,9 +12,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({ { import = "smierx.plugins" }, { import = "smierx.plugins.lsp" } }, {
-	install = {
-		colorscheme = { "nightfly" },
-	},
 	checker = {
 		enabled = true,
 		notify = false,
@@ -23,3 +20,7 @@ require("lazy").setup({ { import = "smierx.plugins" }, { import = "smierx.plugin
 		notify = false,
 	},
 })
+
+vim.cmd 'colorscheme tokyonight'
+vim.api.nvim_set_hl(0,"Normal", {bg = "none"})
+vim.api.nvim_set_hl(0,"NormalFloat", {bg = "none"})
