@@ -7,11 +7,7 @@ return {
 		-- set keymaps
 		local keymap = vim.keymap -- for conciseness
 		local wk = require("which-key")
-		wk.register({
-			h = {
-				name = "harpoon",
-			},
-		}, { prefix = "<leader>" })
+		wk.add({"<leader>h",group="harpoon"})
 		keymap.set(
 			"n",
 			"<leader>hm",

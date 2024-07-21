@@ -29,7 +29,6 @@ return {
 			ensure_installed = {
 				"lua_ls",
         "ruff_lsp",
-        "pyright"
 			},
 			handlers = {
 				function(server_name) -- default handler (optional)
@@ -54,37 +53,7 @@ return {
 				end,
 			},
 		})
-    require("lspconfig").pyright.setup({
-                settings = {
-                    pyright = {
-                        disableOrganizeImports = true, -- Will use ruff instead
-                    },
-                    python = {
-                        analysis = {
-                            autoSearchPaths = true,
-                            autoImportCompletions = true,
-                            diagnosticMode = "openFilesOnly", -- Use "workspace" if you like but may be slow
-                            typeCheckingMode = "basic",   -- Using Mypy instead, it's better
-                            pythonPath = "python",        -- gets replaced below
-                        }
-                    },
-                },
-                before_init = function(_, config)
-                    local penv = require("util").python_env({
-                        patterns = { "venv", ".venv", "env", ".env", ".eddie-venv" }
-                    })
-                    if penv == nil then
-                        return
-                    end
-                    config.settings.python.pythonPath = penv.python
-                end,
-                capabilities = capabilities,
-            })
     require('lspconfig').ruff_lsp.setup {
--- Handled by Pyright
-                on_attach = function(client, _)
-                    client.server_capabilities.hoverProvider = false
-                end,
                 commands = {
                     RuffOrganizeImports = {
                       function()
