@@ -12,6 +12,7 @@ rm -rf luarocks-3.11.1
 rm luarocks-3.11.1-tar.gz
 rm nvim-linux64.tar.gz
 rm lazygit
+
 declare -a arr=("git@github.com:smierx/digitaldatachainweedfarmechternhagen.git"
                 "git@github.com:smierx/zeiterfassung_backend.git"
                 "git@github.com:smierx/anki_cli.git"
@@ -19,3 +20,8 @@ declare -a arr=("git@github.com:smierx/digitaldatachainweedfarmechternhagen.git"
                 "git@github.com:smierx/pipelines.git"
                 "git@github.com:smierx/templates.git"
                 )
+
+for i in "${arr[@]}"
+do
+  git clone "$i"
+done
