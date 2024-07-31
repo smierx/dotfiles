@@ -11,3 +11,4 @@ source .bashrc
 rm -rf luarocks-3.11.1
 rm luarocks-3.11.1-tar.gz
 rm nvim-linux64.tar.gz
+rm lazygit
