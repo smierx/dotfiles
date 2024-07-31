@@ -2,6 +2,7 @@ sudo apt update
 
 sudo apt install \
     build-essential \
+    git \
     curl \
     fzf \
     ripgrep \
@@ -21,8 +22,6 @@ sudo apt install \
     wget \
     xz-utils \
     zlib1g-dev \
-    lua5.2 \
-    liblua5.2 \
     unzip \
     lua5.1 \
     liblua5.1 \
