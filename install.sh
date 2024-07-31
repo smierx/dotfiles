@@ -47,6 +47,7 @@ pyenv install 3.12.4
 pyenv global 3.12.4
 
 pipx ensurepath 
+source .bashrc
 
 pipx install poetry
 pipx install pyright
@@ -57,3 +58,7 @@ tar zxpf luarocks-3.11.1.tar.gz
 cd luarocks-3.11.1
 ./configure && make && sudo make install
 sudo luarocks install luasocket
+
+ssh-keygen
+
+cat .ssh/id_rsa.pub
