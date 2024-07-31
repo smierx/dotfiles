@@ -59,6 +59,7 @@ cd luarocks-3.11.1
 ./configure && make && sudo make install
 sudo luarocks install luasocket
 
+cd ~
 ssh-keygen
 
 cat .ssh/id_rsa.pub
