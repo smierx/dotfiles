@@ -52,7 +52,6 @@ pipx install poetry
 pipx install pyright
 pipx install ruff-lsp
 
-
 wget https://luarocks.org/releases/luarocks-3.11.1.tar.gz
 tar zxpf luarocks-3.11.1.tar.gz
 cd luarocks-3.11.1
