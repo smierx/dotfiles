@@ -22,11 +22,11 @@ sudo apt install \
     wget \
     xz-utils \
     zlib1g-dev \
-    unzip 
+    unzip \
     lua5.1 \
-    liblua5.1-0 \
+    liblua5.1-dev \
     ca-certificates \
-    gnupg \
+    gnupg
 
 sudo mkdir -p /etc/apt/keyrings
 curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
