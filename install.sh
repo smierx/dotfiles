@@ -1,4 +1,5 @@
-sudo apt update & sudo apt upgrade
+sudo apt update  
+sudo apt upgrade
 
 sudo apt install \
     build-essential \
@@ -27,6 +28,7 @@ sudo apt install \
     liblua5.1-dev \
     ca-certificates \
     gnupg
+
 
 sudo mkdir -p /etc/apt/keyrings
 curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
