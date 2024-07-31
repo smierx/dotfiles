@@ -22,9 +22,9 @@ sudo apt install \
     wget \
     xz-utils \
     zlib1g-dev \
-    unzip \
+    unzip 
     lua5.1 \
-    liblua5.1 \
+    liblua5.1-0 \
     ca-certificates \
     gnupg \
 
