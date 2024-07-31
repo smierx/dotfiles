@@ -67,5 +67,5 @@ sudo luarocks install luasocket
 
 cd ~
 ssh-keygen
-curl -Lo install2.sh https://github.com/smierx/dotfiles/blob/main/install2.sh
+
 cat .ssh/id_rsa.pub
