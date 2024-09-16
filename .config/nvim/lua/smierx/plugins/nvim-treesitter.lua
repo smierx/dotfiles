@@ -39,6 +39,8 @@ return {
 					"dockerfile",
 					"gitignore",
 					"python",
+          "vimdoc",
+          "luadoc"
 				},
 				-- enable nvim-ts-context-commentstring plugin for commenting tsx and jsx
 				--context_commentstring = {

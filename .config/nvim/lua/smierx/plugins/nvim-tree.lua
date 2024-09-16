@@ -53,11 +53,7 @@ return {
 		local keymap = vim.keymap -- for conciseness
 
 		local wk = require("which-key")
-		wk.register({
-			e = {
-				name = "treesitter",
-			},
-		}, { prefix = "<leader>" })
+		wk.add({"<leader>e",group="treesitter"})
 		keymap.set("n", "<leader>ee", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" }) -- toggle file explorer
 		keymap.set(
 			"n",
