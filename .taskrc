@@ -16,8 +16,9 @@
 # Use the command 'task show' to see all defaults and overrides
 
 # Files
-data.location=~/.task
-
+sync.server.url=http://tw-server.smierx.com
+sync.server.client_id=957c1fad-0159-4012-a5c2-59d5364cc363
+sync.encryption_secret=957c1fad-0159-4012-a5c2-59d5364cc363
 # To use the default location of the XDG directories,
 # move this configuration file from ~/.taskrc to ~/.config/task/taskrc and uncomment below
 
@@ -42,7 +43,7 @@ include solarized-dark-256.theme
 
 regex=on
 confirmation=off
-news.version=2.6.0
+news.version=3.1.0
 urgency.user.tag.problem.coefficient=4.5
 urgency.user.tag.later.coefficient=-6.0
 urgency.blocked.coefficient=0.0

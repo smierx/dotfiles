@@ -1,3 +1,5 @@
+--TODO: Überprüfen
+--TODO: Gab es nicht Harpoon2?
 return {
 	"ThePrimeagen/harpoon",
 	dependencies = {

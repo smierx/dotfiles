@@ -1,3 +1,5 @@
+--TODO: Überprüfen
+--TODO: Python hinzufügen
 return {
 	"neovim/nvim-lspconfig",
 	dependencies = {
@@ -28,7 +30,7 @@ return {
 		require("mason-lspconfig").setup({
 			ensure_installed = {
 				"lua_ls",
-        "ruff_lsp",
+        "elixirls"
 			},
 			handlers = {
 				function(server_name) -- default handler (optional)
@@ -53,28 +55,7 @@ return {
 				end,
 			},
 		})
-    require('lspconfig').ruff_lsp.setup {
-                commands = {
-                    RuffOrganizeImports = {
-                      function()
-                        vim.lsp.buf.execute_command {
-                          command = 'ruff.applyAutofix',
-                          arguments = { { uri = vim.uri_from_bufnr(0) } },
-                        }
-                      end,
-                      description = 'Ruff: Fix all auto-fixable problems',
-                    },
-                },
-                capabilities = capabilities,
-      init_options = {
-        settings = {
-          -- Any extra CLI arguments for `ruff` go here.
-          args = {"--config=./pyproject.toml"},
-        }
-      }
-    }
 		local cmp_select = { behavior = cmp.SelectBehavior.Select }
-
 		cmp.setup({
 			snippet = {
 				expand = function(args)
@@ -108,3 +89,4 @@ return {
 		})
 	end,
 }
+

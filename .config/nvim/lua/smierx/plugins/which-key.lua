@@ -1,3 +1,4 @@
+--TODO: Überprüfen
 return {
 	"folke/which-key.nvim",
 	event = "VeryLazy",
@@ -7,3 +8,4 @@ return {
 		-- refer to the configuration section below
 	},
 }
+

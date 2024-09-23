@@ -1,3 +1,5 @@
+--TODO: Überprüfen
+--TODO: Whichkeys usw. einbauen
 return {
   "numToStr/Comment.nvim",
   event = { "BufReadPre", "BufNewFile" },
