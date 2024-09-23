@@ -1,20 +1,5 @@
 # Leader: g
 
-g_dirty() {
- ~/smierx/projects/ProjectGitScanner/venv/bin/python ~/smierx/projects/ProjectGitScanner/dirty.py 
-}
-
-alias gdirty="g_dirty "
-
-
-
-
-
-
-
-
-
-
 alias gs="git status"
 alias gc="git checkout"
 alias gb="git branch"

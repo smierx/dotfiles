@@ -1,20 +1,5 @@
 # Leader: _
-
-m_depth(){
-  rpath=$(pwd);
-  cd ~/Projekte/smierx/;
-  poetry run python scripts/0008_macos_folder_depth.py;
-  cd $rpath;
-}
-m_idea(){
-  cd /opt/idea-IU-241.14494.240/bin/;
-  ./idea.sh &
-}
-
-alias _hello='echo "hello world"'
 alias _reload='source ~/.zshrc'
 alias _server='ssh smierx@192.168.178.87'
-alias _depth="m_depth "
 
-alias _idea="m_idea "
 alias _nvim="nvim --startuptime ~/startuptime.log"
