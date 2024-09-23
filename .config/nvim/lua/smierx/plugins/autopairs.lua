@@ -1,3 +1,4 @@
+--TODO: Überprüfen
 return {
   "windwp/nvim-autopairs",
   event = { "InsertEnter" },

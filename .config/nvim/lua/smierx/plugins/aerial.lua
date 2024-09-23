@@ -1,3 +1,4 @@
+--TODO: Überprüfen
 return {
 	"stevearc/aerial.nvim",
 	opts = {},
@@ -18,3 +19,4 @@ return {
 		})
 	end,
 }
+

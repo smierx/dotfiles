@@ -1,11 +1,9 @@
+--TODO: Kann ich sowas wie mit jk machen nur js oder so und dann macht er :w noch dazu? 
+--TODO: DAP Plugin einrichten
+--TODO: Was ist mit LuaSnip?
+--TODO: Mini.Move plugin
+--TODO: TMUX Plugin
+--TODO: Tmux navigation
+
 require("smierx.core")
 require("smierx.lazy")
-
-require("luasnip").config.set_config({ -- Setting LuaSnip config
-  	-- Enable autotriggered snippets
-  enable_autosnippets = true,
-	
-  -- Use Tab (or some other key if you prefer) to trigger visual selection
-  store_selection_keys = "<Tab>",
-})
-require("luasnip.loaders.from_vscode").lazy_load({ paths = "~/.config/nvim/LuaSnip/" })
