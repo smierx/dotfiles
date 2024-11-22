@@ -23,16 +23,9 @@ return {
 				-- ensure these language parsers are installed
 				ensure_installed = {
 					"json",
-					"javascript",
-					"typescript",
-					"tsx",
 					"yaml",
-					"html",
-					"css",
-					"prisma",
 					"markdown",
 					"markdown_inline",
-					"svelte",
 					"graphql",
 					"bash",
 					"lua",
@@ -41,13 +34,9 @@ return {
 					"gitignore",
 					"python",
           "vimdoc",
-          "luadoc"
+          "luadoc",
+          "elixir"
 				},
-				-- enable nvim-ts-context-commentstring plugin for commenting tsx and jsx
-				--context_commentstring = {
-				--enable = true,
-				--enable_autocmd = false,
-				--},
 				-- auto install above language parsers
 				auto_install = true,
 			})

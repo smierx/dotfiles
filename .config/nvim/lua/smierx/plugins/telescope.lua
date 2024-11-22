@@ -1,8 +1,6 @@
---TODO: Überprüfen
---TODO: Whichkey update
+--TODO: Whichkey
 return {
 	"nvim-telescope/telescope.nvim",
-	tag = "0.1.3",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
@@ -40,4 +38,3 @@ return {
     keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available help tags
   end,
 }
-
