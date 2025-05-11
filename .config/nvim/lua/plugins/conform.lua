@@ -6,7 +6,6 @@ return {
 			formatters_by_ft = {
 				purescript = { "purstidy", stop_after_first = true },
 				lua = { "stylua", stop_after_first = true },
-				ocaml = { "ocamlformat", stop_after_first = true },
 				python = { "black" },
 				rust = { "rustfmt" },
 				javascript = { "prettier", stop_after_first = true },
@@ -48,4 +47,3 @@ return {
 		})
 	end,
 }
-
