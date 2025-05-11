@@ -1,0 +1,15 @@
+# Python specific
+.mypy_cache/
+.pytest_cache/
+__pycache__/
+.hypothesis/
+.ruff_cache/
+.ropeproject/
+venv/
+.venv/
+# Rust specific
+target/
+
+# Zig specific
+.zig-cache/
+zig-out/
