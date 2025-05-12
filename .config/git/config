@@ -1,11 +1,12 @@
 [user]
   name = Dudas, Michel
-  email = michel.dudas@googlemail.com #TODO: Auf Arbeit ändern
+  email = mdudas@phoenixcontact.com #TODO: Auf Arbeit ändern
 
 [core]
   compression = 9
   whitespace = error
   preloadindex = true
+  pager = diff-so-fancy | less --tabs=4 -RFX
 
 [advice]
   addEmptyPathspec = false
@@ -26,7 +27,7 @@
   interHunkContext = 10
 
 [pager]
-  diff = diff-so-fancy | $PAGER
+#  diff = diff-so-fancy | $PAGER
   branch = false
   tag = false
 

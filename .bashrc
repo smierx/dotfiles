@@ -1,13 +1,16 @@
 ## PATH
 export PATH="$HOME/.config/scripts/:$PATH"
-
+export PATH="$PATH:/home/smierx/.local/bin"
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - bash)"
 ## DOTFILES
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 
 ## GIT
 alias gs="git status --short"
-alias gd="git diff --output-indicator-new=' ' --output-indicator-old=' '"
+alias gd="git diff --ignore-blank-lines --output-indicator-new=' ' --output-indicator-old=' '"
 alias ga="git add"
 alias gap="git add --patch"
 alias gc="git commit"
