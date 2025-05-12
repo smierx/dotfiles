@@ -15,7 +15,7 @@ return {
 			"saadparwaiz1/cmp_luasnip",
 			"rafamadriz/friendly-snippets",
 			"onsails/lspkind.nvim",
-			"windwp/nvim-autopairs"
+			"windwp/nvim-autopairs",
 		},
 	},
 	{
@@ -26,7 +26,7 @@ return {
 
 			luasnip.add_snippets("markdown", require("snippets.notes"))
 			luasnip.add_snippets("text", require("snippets.notes"))
-
+			luasnip.add_snippets("yaml", require("snippets.docker-compose"))
 			-- Set up nvim-cmp.
 			local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 			local cmp = require("cmp")
