@@ -14,8 +14,8 @@ keymap.set("n", "<leader>,", "<C-w>h") -- move window left
 keymap.set("n", "<leader>.", "<C-w>l") -- move window right
 keymap.set("n", "<leader>sx", ":close<CR>") -- close current split window
 
-exitTerm = function ()
-    vim.cmd(":ToggleTerm");
+exitTerm = function()
+	vim.cmd(":ToggleTerm")
 end
 
-keymap.set("t","<esc><esc>",exitTerm)
+keymap.set("t", "<esc><esc>", exitTerm)

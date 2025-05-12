@@ -1,5 +1,6 @@
-return {{
-	"folke/todo-comments.nvim", 
-	opts = {} 
-},
+return {
+	{
+		"folke/todo-comments.nvim",
+		opts = {},
+	},
 }
