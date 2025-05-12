@@ -4,6 +4,11 @@ export PATH="$PATH:/home/smierx/.local/bin"
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - bash)"
+
+## TMUX
+PATH="$PATH":"$HOME/.local/scripts/"
+bind '"\C-f":"tmux-sessionizer\n"'
+
 ## DOTFILES
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
