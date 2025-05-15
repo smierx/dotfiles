@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Prüfen, ob .env existiert
+if [ ! -f .env ]; then
+  echo ".env-Datei nicht gefunden!"
+  exit 1
+fi
+
+# Erstelle .env-sample mit nur den Schlüsseln
+awk -F= '/=/ {print $1"="}' .env > .env-sample
+
+echo ".env-sample wurde erstellt."
+

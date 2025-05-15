@@ -1,6 +1,7 @@
 ## PATH
 export PATH="$HOME/.config/scripts/:$PATH"
 export PATH="$PATH:/home/smierx/.local/bin"
+export PATH="$PATH:/usr/local/bin"
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - bash)"
