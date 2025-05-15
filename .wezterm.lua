@@ -5,7 +5,17 @@ local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 
 -- This is where you actually apply your config choices
-config.default_prog = { "powershell.exe", "-NoLogo" }
+-- Betriebssystem erkennen
+local os = wezterm.target_triple
+
+if os:find("windows") then
+  config.default_prog = { "powershell.exe", "-NoLogo" }
+elseif os:find("apple") then
+  config.default_prog = { "/bin/bash", "-l" }
+elseif os:find("linux") then
+  config.default_prog = { "/usr/bin/bash", "-l" }
+end
+
 config.default_cwd = "~/projects/" --FUNKTIONIERT NICHT
 config.font = wezterm.font('JetBrains Mono', { weight = 'ExtraBlack' })
 
