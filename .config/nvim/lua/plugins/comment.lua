@@ -1,3 +1,10 @@
 return {
-	"numToStr/Comment.nvim",
+  "numToStr/Comment.nvim",
+  opts = {
+    mappings = {
+      basic = true,
+      extra = true
+    }
+  }
 }
+

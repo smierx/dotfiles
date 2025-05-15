@@ -1,0 +1,38 @@
+#!/usr/bin/bash
+
+#!/bin/bash
+
+# Setze den Pfad zum Hauptverzeichnis
+HAUPTVERZEICHNIS="$HOME/projects"
+
+# Gehe in das Hauptverzeichnis
+cd "$HAUPTVERZEICHNIS" || exit 1
+
+# Durchlaufe alle Unterverzeichnisse
+for d in */ ; do
+    cd "$HAUPTVERZEICHNIS/$d" || continue
+
+    # Prüfe, ob es ein Git-Repository ist
+    if [ -d ".git" ]; then
+        echo "Bearbeite Repository: $d"
+
+        # Hole den aktuellen Branch-Namen
+        CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+
+        # Erstelle neuen Branch-Namen
+        WIP_BRANCH="WIP/$CURRENT_BRANCH"
+
+        # Erstelle neuen Branch basierend auf dem aktuellen
+        git checkout -b "$WIP_BRANCH"
+
+        # Füge alle geänderten, aber bereits getrackten Dateien hinzu
+        git add -u
+
+        # Committe mit Nachricht
+        git commit -m "WIP commit auf Branch $CURRENT_BRANCH"
+
+        # Push den neuen Branch
+        git push -u origin "$WIP_BRANCH"
+    fi
+done
+

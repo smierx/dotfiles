@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# Setze den Pfad zum Hauptverzeichnis
+HAUPTVERZEICHNIS="$HOME/projects/"
+
+# Gehe in das Hauptverzeichnis
+cd "$HAUPTVERZEICHNIS" || exit 1
+
+# Durchlaufe alle Unterverzeichnisse
+for d in */ ; do
+    cd "$HAUPTVERZEICHNIS/$d" || continue
+
+    # Prüfe, ob es ein Git-Repository ist
+    if [ -d ".git" ]; then
+        echo "Bearbeite Repository: $d"
+
+        CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+
+        if [[ "$CURRENT_BRANCH" == WIP/* ]]; then
+            ORIGINAL_BRANCH="${CURRENT_BRANCH#WIP/}"
+
+            echo "Wechsle zurück zu $ORIGINAL_BRANCH"
+            git checkout "$ORIGINAL_BRANCH" || continue
+
+            echo "Setze $ORIGINAL_BRANCH auf den Stand vor dem WIP-Commit zurück"
+            git reset --hard origin/"$ORIGINAL_BRANCH"
+
+            echo "Lösche lokalen WIP-Branch: $CURRENT_BRANCH"
+            git branch -D "$CURRENT_BRANCH"
+
+            echo "Lösche Remote-WIP-Branch (falls vorhanden)"
+            git push origin --delete "$CURRENT_BRANCH"
+        else
+            echo "Kein WIP-Branch aktiv in $d, überspringe..."
+        fi
+    fi
+done
+
