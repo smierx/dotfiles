@@ -1,5 +1,5 @@
 return {
-	"hkupty/iron.nvim",
+	"Vigemus/iron.nvim",
 	config = function()
 		local iron = require("iron.core")
 
@@ -12,28 +12,28 @@ return {
 					sh = {
 						-- Can be a table or a function that
 						-- returns a table (see below)
-						command = { "zsh" },
+						command = { "bash" },
 					},
 				},
 				-- How the repl window will be displayed
 				-- See below for more information
-				repl_open_cmd = require("iron.view").bottom(40),
+				repl_open_cmd = "vertical botright 80 split",
 			},
 			-- Iron doesn't set keymaps by default anymore.
 			-- You can set them here or manually add keymaps to the functions in iron.core
 			keymaps = {
-				send_motion = "<space>sc",
-				visual_send = "<space>sc",
-				send_file = "<space>sf",
-				send_line = "<space>sl",
-				send_mark = "<space>sm",
-				mark_motion = "<space>mc",
-				mark_visual = "<space>mc",
-				remove_mark = "<space>md",
-				cr = "<space>s<cr>",
-				interrupt = "<space>s<space>",
-				exit = "<space>sq",
-				clear = "<space>cl",
+				send_motion = "<space>ism",
+				visual_send = "<space>isc",
+				send_file = "<space>if",
+				send_line = "<space>il",
+				send_mark = "<space>isa",
+				mark_motion = "<space>im",
+				mark_visual = "<space>iv",
+				remove_mark = "<space>sd",
+				cr = "<space>i<cr>",
+				interrupt = "<space>i<space>",
+				exit = "<space>iq",
+				clear = "<space>icl",
 			},
 			-- If the highlight is on, you can change how it looks
 			-- For the available options, check nvim_set_hl
