@@ -1,5 +1,4 @@
 local opt = vim.opt -- for conciseness
-
 -- line numbers
 opt.relativenumber = true -- show relative line numbers
 opt.number = true -- shows absolute line number on cursor line (when relative number is on)
@@ -13,14 +12,14 @@ opt.autoindent = true -- copy indent from current line when starting new one
 -- line wrapping
 opt.wrap = false -- disable line wrapping
 
-
 -- search settings
 opt.ignorecase = true -- ignore case when searching
 opt.smartcase = true -- if you include mixed case in your search, assumes you want case-sensitive
+vim.o.updatetime = 250 -- reduziert die Wartezeit für CursorHold
+vim.cmd([[autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })]])
 
 -- cursor line
 opt.cursorline = true -- highlight the current cursor line
-
 
 -- appearance
 
@@ -43,11 +42,11 @@ opt.swapfile = false
 
 -- Set shell to PowerShell 7 if on Win32 or Win64
 if vim.fn.has("win32") == 1 or vim.fn.has("win64") == 1 then
-    opt.shell = "pwsh -NoLogo"
-    opt.shellcmdflag =
-        "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;"
-    opt.shellredir = "-RedirectStandardOutput %s -NoNewWindow -Wait"
-    opt.shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode"
-    opt.shellquote = ""
-    opt.shellxquote = ""
+	opt.shell = "pwsh -NoLogo"
+	opt.shellcmdflag =
+		"-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;"
+	opt.shellredir = "-RedirectStandardOutput %s -NoNewWindow -Wait"
+	opt.shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode"
+	opt.shellquote = ""
+	opt.shellxquote = ""
 end
