@@ -1,5 +1,5 @@
 -- Pull in the wezterm API
-local wezterm = require 'wezterm'
+local wezterm = require("wezterm")
 
 -- This will hold the configuration.
 local config = wezterm.config_builder()
@@ -9,17 +9,15 @@ local config = wezterm.config_builder()
 local os = wezterm.target_triple
 
 if os:find("windows") then
-  config.default_prog = { "powershell.exe", "-NoLogo" }
+	config.default_prog = { "powershell.exe", "-NoLogo" }
 elseif os:find("apple") then
-  config.default_prog = { "/bin/bash", "-l" }
+	config.default_prog = { "/bin/bash", "-l" }
 elseif os:find("linux") then
-  config.default_prog = { "/usr/bin/bash", "-l" }
+	config.default_prog = { "/usr/bin/bash", "-l" }
 end
 
 config.default_cwd = "~/projects/" --FUNKTIONIERT NICHT
-config.font = wezterm.font('JetBrains Mono', { weight = 'ExtraBlack' })
-
-
+config.font = wezterm.font("JetBrains Mono", { weight = "ExtraBlack" })
 
 -- Set colorscheme
 config.color_scheme = "Tokyo Night (Gogh)"
@@ -57,12 +55,12 @@ config.inactive_pane_hsb = {
 	saturation = 0.24,
 	brightness = 0.5,
 }
-local wezterm = require 'wezterm'
+local wezterm = require("wezterm")
 local act = wezterm.action
 
 config.keys = {
-  -- paste from the clipboard
-  { key = 'V', mods = 'CTRL', action = act.PasteFrom 'Clipboard' },
+	-- paste from the clipboard
+	{ key = "V", mods = "CTRL", action = act.PasteFrom("Clipboard") },
 }
 -- Tab bar
 -- config.enable_tab_bar = false
@@ -108,3 +106,4 @@ end)
 
 -- Return the configuration to wezterm
 return config
+
