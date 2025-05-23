@@ -21,6 +21,7 @@ return {
 					"eslint",
 					"sqlls",
 					"marksman",
+					"gopls",
 				},
 			})
 		end,
@@ -33,6 +34,10 @@ return {
 			local lspconfig = require("lspconfig")
 			local configs = require("lspconfig.configs")
 
+			lspconfig.gopls.setup({
+				capabilities = capabilities,
+				settings = {},
+			})
 			lspconfig.sqlls.setup({
 				capabilities = capabilities,
 			})
