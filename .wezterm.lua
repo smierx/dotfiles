@@ -17,7 +17,7 @@ elseif os:find("linux") then
 end
 
 config.default_cwd = "~/projects/" --FUNKTIONIERT NICHT
-config.font = wezterm.font("JetBrains Mono", { weight = "ExtraBlack" })
+config.font = wezterm.font("GohuFont uni14 Nerd Font Mono", { weight = "Regular" })
 
 -- Set colorscheme
 config.color_scheme = "Tokyo Night (Gogh)"
