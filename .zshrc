@@ -102,3 +102,46 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#
+## PATH
+export PATH="$HOME/.config/scripts:$PATH"
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:/usr/local/bin"
+export PYENV_ROOT="$HOME/.pyenv"
+
+if [ -d "$PYENV_ROOT/bin" ]; then
+  export PATH="$PYENV_ROOT/bin:$PATH"
+fi
+
+eval "$(pyenv init - zsh)"
+
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="$PATH:$HOME/.local/scripts"
+
+if [ -f "$HOME/phoenix_proxy" ]; then
+  source "$HOME/phoenix_proxy"
+fi
+
+## TMUX
+bindkey -s '^F' 'tmux-sessionizer\n'
+
+## DOTFILES
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
+## GIT
+alias gs="git status --short"
+alias gd="git diff --ignore-blank-lines --output-indicator-new=' ' --output-indicator-old=' '"
+alias ga="git add"
+alias gap="git add --patch"
+alias gc="git commit"
+alias gp="git push"
+alias gu="git pull"
+alias gl="git log --all --graph --pretty=format:'%C(magenta)%h %C(white)%an %ar%C(auto) %D%n%s%n'"
+alias gb="git branch"
+alias gi="git init"
+alias gcl="git clone"
+
+# Created by `pipx` on 2025-07-08 15:05:32
+export PATH="$PATH:$HOME/.local/bin"
+
