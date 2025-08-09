@@ -11,7 +11,7 @@ local os = wezterm.target_triple
 if os:find("windows") then
 	config.default_prog = { "powershell.exe", "-NoLogo" }
 elseif os:find("apple") then
-	config.default_prog = { "/bin/bash", "-l" }
+	config.default_prog = { "/bin/zsh", "-l" }
 elseif os:find("linux") then
 	config.default_prog = { "/usr/bin/bash", "-l" }
 end
@@ -20,8 +20,56 @@ config.default_cwd = "~/projects/" --FUNKTIONIERT NICHT
 config.font = wezterm.font("GohuFont uni14 Nerd Font Mono", { weight = "Regular" })
 
 -- Set colorscheme
-config.color_scheme = "Tokyo Night (Gogh)"
+--config.color_scheme = "Horizon Dark (Gogh)"
 
+config.colors = {
+	foreground = "#C0C0C0",
+	background = "#121212",
+
+	cursor_bg = "#00FF5F", -- kräftiges Grün
+	cursor_border = "#00FF5F",
+	cursor_fg = "#002B1E",
+
+	selection_bg = "#333333",
+	selection_fg = "#FFFFFF",
+
+	ansi = {
+		"#1A1A1A",
+		"#2A2A2A",
+		"#3A3A3A",
+		"#4A4A4A",
+		"#5A5A5A",
+		"#6A6A6A",
+		"#7A7A7A",
+		"#8A8A8A",
+	},
+	brights = {
+		"#2A2A2A",
+		"#3A3A3A",
+		"#4A4A4A",
+		"#5A5A5A",
+		"#6A6A6A",
+		"#7A7A7A",
+		"#8A8A8A",
+		"#FFFFFF",
+	},
+
+	tab_bar = {
+		background = "#121212",
+		active_tab = {
+			bg_color = "#1A1A1A",
+			fg_color = "#FFFFFF",
+		},
+		inactive_tab = {
+			bg_color = "#002B1E",
+			fg_color = "#777777",
+		},
+		new_tab = {
+			bg_color = "#002B1E",
+			fg_color = "#444444",
+		},
+	},
+}
 -- Font settings
 config.font_size = 16
 
@@ -64,46 +112,9 @@ config.keys = {
 }
 -- Tab bar
 -- config.enable_tab_bar = false
-config.use_fancy_tab_bar = true
-config.tab_bar_at_bottom = false
+config.use_fancy_tab_bar = false
+config.tab_bar_at_bottom = true
 config.status_update_interval = 1000
-wezterm.on("update-status", function(window, pane)
-	local basename = function(s)
-		return string.gsub(s, "(.*[/\\])(.*)", "%2")
-	end
-
-	-- Current working directory
-	local cwd = pane:get_current_working_dir()
-	if cwd then
-		if type(cwd) == "userdata" then
-			cwd = basename(cwd.file_path)
-		else
-			cwd = basename(cwd)
-		end
-	else
-		cwd = ""
-	end
-
-	-- Current command
-	local cmd = pane:get_foreground_process_name()
-	cmd = cmd and basename(cmd) or ""
-
-	-- Time
-	local time = wezterm.strftime("%H:%M")
-
-	-- Right status
-	window:set_right_status(wezterm.format({
-		{ Text = wezterm.nerdfonts.md_folder .. "  " .. cwd },
-		{ Text = " | " },
-		{ Foreground = { Color = "#e0af68" } },
-		{ Text = wezterm.nerdfonts.fa_code .. "  " .. cmd },
-		"ResetAttributes",
-		{ Text = " | " },
-		{ Text = wezterm.nerdfonts.md_clock .. "  " .. time },
-		{ Text = "  " },
-	}))
-end)
 
 -- Return the configuration to wezterm
 return config
-
