@@ -30,3 +30,7 @@ alias gl="git log --all --graph --pretty=format:'%C(magenta)%h %C(white) %an %ar
 alias gb="git branch"
 alias gi="git init"
 alias gcl="git clone"
+
+# Created by `pipx` on 2025-07-08 15:05:32
+export PATH="$PATH:/Users/smierx/.local/bin"
+. "/Users/smierx/.deno/env"
