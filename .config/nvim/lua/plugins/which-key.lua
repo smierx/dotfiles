@@ -32,5 +32,19 @@ return {
       end,
       desc = "Buffer Local Keymaps (which-key)",
     },
+    {
+      "<leader>h",
+      function()
+        require("which-key").show({ global = false })
+      end,
+      desc="harpoon"
+    },
+    {
+      "<leader>f",
+      function()
+        require("which-key").show({ global = false })
+      end,
+      desc="telescope"
+    }
   },
 }

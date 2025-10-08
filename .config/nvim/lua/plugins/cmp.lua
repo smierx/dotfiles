@@ -25,14 +25,12 @@ return {
 			local luasnip = require("luasnip")
 
 			luasnip.add_snippets("markdown", require("snippets.markdown"))
-			luasnip.add_snippets("latex", require("snippets.markdown"))
 			luasnip.add_snippets("text", require("snippets.markdown"))
-			luasnip.add_snippets("yaml", require("snippets.docker-compose"))
 			-- Set up nvim-cmp.
 			local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 			local cmp = require("cmp")
 			require("luasnip.loaders.from_vscode").lazy_load()
-
+      require('luasnip').filetype_extend("markdown", {"markdown"})
 			cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 
 			cmp.setup({
